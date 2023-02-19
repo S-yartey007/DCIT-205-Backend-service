@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloock&display=swap');
+
+
+        body {
+ margin: 20px auto;
+            font-family:'Gloock', serif ;
+        }
+
+p,h1,h3,a {
+            text-decoration: none;
+            color: black;
+        }
+        
+footer {
+            text-align: center;
+            margin: 100px auto 20px;
+        }
+
+.delete {
+    border-radius: 5px;
+    color: red;
+    border: 5px solid black;
+    width: 100px;
+}
+    

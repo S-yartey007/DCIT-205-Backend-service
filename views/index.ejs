@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./Partials/head.ejs')  %>
+<body>
+  <%- include('./Partials/nav.ejs')  %>
+        <div class="content">
+            <h2>All entries</h2>
+            <% if(entries.length > 0) {%>
+               <% entries.forEach(entry => { %>
+                <div class="entries div">
+                    <a class="single" href="/entries/<%= entry._id %>">
+                        <h3 class="ID"><%= entry.ID%></h3>
+                    <span class="Name"><%= entry.Name%></span> 
+                    </a>
+                </div>
+              
+               <% }) %>
+            <% } else { %>
+                <p>There are no entries</p>
+            <%} %>
+        </div>
+        <%- include('./Partials/footer.ejs')  %>
+</body>
+</html>

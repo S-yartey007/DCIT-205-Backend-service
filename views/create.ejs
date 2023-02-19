@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./Partials/head.ejs')  %>
+<body>
+    <%- include('./Partials/nav.ejs')  %>
+        <div class="content">
+            <h2>All entries</h2>
+        </div>
+   
+    <div class="create-entry content">
+        <form action="/entries" method="POST">
+            <label for="ID">Student ID</label>
+            <input type="text"  id="ID" name="ID">
+            <label for="Name">Name</label>
+            <input type="text" id="Name" name="Name">
+           <!--  <label for="Programe">Program</label>
+            <input type="text" id="Program">
+            <label for="Department">Department</label>
+            <input type="text" id="Department"> -->
+            <button>Submit</button>
+        </form>
+    </div>
+    <%- include('./Partials/footer.ejs')  %>
+</body>
+</html>

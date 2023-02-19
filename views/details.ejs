@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./Partials/head.ejs')  %>
+<body>
+    <%- include('./Partials/nav.ejs')  %>
+    <div class="content">
+        <h2><%= student.ID  %></h2>
+        <div class="content">
+            <p><%= student.Name %></p>
+        </div>
+         <a class = "delete" data-doc="<%=student._id %>">delete</a> 
+    </div>
+    <%- include('./Partials/footer.ejs')  %>
+    <script>
+        const button = document.querySelector('a.delete');
+
+        button.addEventListener('click', (e) => {
+            const endpoint = `/entries/${button.dataset.doc}`;
+            fetch(endpoint, {
+                method: 'DELETE'
+            })
+            .then((response) =>  response.json())
+            .then((data) => window.location.href = data.redirect)
+            .catch((err) => {
+                console.log(err)
+            }) 
+        })
+    </script>
+</body>
+</html>
